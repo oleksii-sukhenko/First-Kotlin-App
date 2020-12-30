@@ -12,22 +12,16 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        //recyclerView.adapter = CustomRecyclerAdapter(fillList())
-        recyclerView.adapter = CustomRecyclerAdapter(getMonthList())
-    }
-    /*private fun fillList():List<String>{
-        val data = mutableListOf<String>()
-        (0..11).forEach {i -> data.add("${i+1} element")}
-        return data
-    }*/
-    private fun getMonthList(): List<String> {
+        recyclerView.adapter = CustomRecyclerAdapter(fillList())
 
-        val data = mutableListOf<String>()
-        val month = this.resources.getStringArray(R.array.months_of_the_year).toList()
-        (1..12).forEach {i -> data.add("$i $month") }
-        return data
-        //return this.resources.getStringArray(R.array.months_of_the_year).toList()
     }
+    private fun fillList():List<String>{
+        val data = mutableListOf<String>()
+        val month = this.resources.getStringArray(R.array.months).toList()
+        (0..11).forEach {i -> data.add("${i+1} ${month[i]}")}
+        return data
+    }
+
 
 
 }
