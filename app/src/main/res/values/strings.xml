@@ -2,6 +2,19 @@
     <string name="app_name">My First Kotlin App</string>
     <string name="todo">TODO</string>
 
+    <string name="january">January is first month of the year</string>
+    <string name="february">February is second month of the year</string>
+    <string name="march">March is third month of the year</string>
+    <string name="april">April is fourth month of the year</string>
+    <string name="may">May is fifth month of the year</string>
+    <string name="june">June is sixth month of the year</string>
+    <string name="july">July is seventh month of the year</string>
+    <string name="august">August is eighth month of the year</string>
+    <string name="september">September is ninth month of the year</string>
+    <string name="october">October is tenth month of the year</string>
+    <string name="november">November is eleventh month of the year</string>
+    <string name="december">December is twelfth month of the year</string>
+
     <string-array  name="months">
         <item>January</item>
         <item>February</item>
