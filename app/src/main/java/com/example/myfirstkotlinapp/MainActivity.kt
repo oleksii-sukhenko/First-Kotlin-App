@@ -15,13 +15,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
 
-private var category_index = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CustomRecyclerAdapter(fillList())
+
     }
     private fun fillList():List<String>{
         val data = arrayListOf<String>()
@@ -30,16 +30,6 @@ private var category_index = 0
         return data
     }
 
-
-    //fun onItemClick(position: Int) {
-    //    Toast.makeText(this, "Item ${position+1} clicked", Toast.LENGTH_SHORT).show()
-    //}
-    fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val intent = Intent(this, Content::class.java)
-        intent.putExtra("category", category_index)
-        intent.putExtra("position", position)
-        startActivity(intent)
-    }
 }
 
 

@@ -1,5 +1,6 @@
 package com.example.myfirstkotlinapp
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,11 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfirstkotlinapp.CustomRecyclerAdapter.MyViewHolder
 
-class CustomRecyclerAdapter(    private val values: List<String>) :
+class CustomRecyclerAdapter(private val values: List<String>) :
     RecyclerView.Adapter<MyViewHolder>() {
 
     private val images: IntArray = intArrayOf(R.drawable.january, R.drawable.february,
@@ -31,6 +33,7 @@ class CustomRecyclerAdapter(    private val values: List<String>) :
         holder.imageItem?.setImageResource(images[position])
 
 
+
     }
 
      class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -42,6 +45,10 @@ class CustomRecyclerAdapter(    private val values: List<String>) :
         init {
             textItem = itemView.findViewById(R.id.textItem)
             imageItem = itemView.findViewById(R.id.imageItem)
+            itemView.setOnClickListener{
+                val position: Int = adapterPosition
+                Toast.makeText(itemView.context, "You picked ${position + 1} item",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
